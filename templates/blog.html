@@ -1,12 +1,41 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Blog{% endblock title %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock css %}
+
 {% block content %}
-{% for post in post_list %}
-<div class="post-entry">
-  <h2><a href="">{{ post.title }}</a></h2>
-  <p>{{ post.body }}</p>
-</div>
-{% endfor %}
+<header class="nav-header">
+  <nav class="nav">
+    <ul class="left-nav">
+      <li><a href="/" class="nav-item" class="logo">My Name</a></li>
+    </ul>
+    <ul class="center-nav">
+      <li><a href="#" class="nav-item">Home</a></li>
+      <li><a href="#" class="nav-item">About</a></li>
+      <li><a href="#" class="nav-item">Contact</a></li>
+    </ul>
+    <ul class="right-nav">
+      <li><a href="" class="nav-item">Login</a></li>
+      <li><a href="" class="nav-item">Subscribe</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="intro">
+  <h1>Thoughts on life, the universe and everything.</h1>
+</section>
+
+<main class="main">
+  {% for post in post_list %}
+  <article class="post-entry">
+    <p class="date-entry">{{ post.date }}</p>
+    <h2 class="post-title"><a href="">{{ post.title }}</a></h2>
+  </article>
+  {% endfor %}
+</main>
 {% endblock content %}
