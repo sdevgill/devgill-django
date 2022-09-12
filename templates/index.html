@@ -20,6 +20,9 @@
 <section class="essays">
   <h2>Essays</h2>
   <ul>
+    {% for post in post_list %}
+      <li><a href="">{{ post.title }}</a></li>
+    {% endfor %}
     <li>Essay</li>
     <li>Essay</li>
     <li>Essay</li>
