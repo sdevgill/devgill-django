@@ -1,13 +1,8 @@
 /* Header Nav */
 
-.nav-header {
-  margin: 0 auto;
-  max-width: 1320px;
-}
-
 .nav {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
   margin: 25px 80px;
 }
@@ -20,16 +15,12 @@
 .center-nav,
 .right-nav {
   display: flex;
-  list-style: none;
-  padding: 0;
   gap: 20px;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
-.logo {
-  font-size: 18px;
-  font-weight: 700;
-}
 
 .nav-item {
   color: black;
@@ -39,8 +30,8 @@
 /* Intro Section */
 
 .intro {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-around;
   margin: 60px;
   text-align: center;
@@ -48,7 +39,7 @@
 
 .intro h1 {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 /* Blog Posts */
@@ -56,44 +47,55 @@
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
-  max-width: 1800px;
-}
-
-.main h2 {
-  font-size: 18px;
-  font-weight: 500;
+  max-width: 800px;
 }
 
 .main a {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
 }
 
 .post-entry {
-  width: 700px;
-  display: flex;
+  align-items: center;
   border-bottom: 1px solid #eaeaea;
+  display: flex;
+  margin: 0 10px;
+  padding: 4px 0;
+}
+
+.date-entry, .read-time {
+  font-size: 14px;
+  font-style: italic;
+  margin: 0 10px;
 }
 
 .date-entry {
-  font-size: 14px;
-  /* font-style: italic; */
-  margin: 10px;
+  color: #1b02fa;
+  font-weight: 200;
+}
+
+.read-time {
+  color: #999;
+  font-weight: 300;
 }
 
 .post-title {
+  font-size: 18px;
+  font-weight: 300;
   margin: 10px;
+}
+
+.read-time {
+  margin-left: auto;
 }
 
 /* Media Queries */
 
 @media screen and (max-width: 650px) {
+
   .nav {
     flex-direction: column;
-    margin: 25px 20px;
   }
 
   .left-nav,
@@ -107,11 +109,6 @@
   }
 
   .intro {
-    margin: 40px;
-  }
-
-  .post-entry {
-    max-width: 380px;
-    padding: 0 20px;
+    margin: 40px 10px;
   }
 }

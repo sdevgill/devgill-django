@@ -5,6 +5,11 @@
   margin: 0;
 }
 
+html {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
