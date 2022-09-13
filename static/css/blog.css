@@ -27,7 +27,6 @@
 }
 
 .logo {
-  /* font-size: 1.1rem; */
   font-size: 18px;
   font-weight: 700;
 }
@@ -60,7 +59,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1320px;
+  max-width: 1800px;
 }
 
 .main h2 {
@@ -74,7 +73,7 @@
 }
 
 .post-entry {
-  width: 500px;
+  width: 700px;
   display: flex;
   border-bottom: 1px solid #eaeaea;
 }
@@ -95,5 +94,24 @@
   .nav {
     flex-direction: column;
     margin: 25px 20px;
+  }
+
+  .left-nav,
+  .center-nav,
+  .right-nav {
+    gap: 30px;
+  }
+
+  .right-nav {
+    margin-top: 20px;
+  }
+
+  .intro {
+    margin: 40px;
+  }
+
+  .post-entry {
+    max-width: 380px;
+    padding: 0 20px;
   }
 }
