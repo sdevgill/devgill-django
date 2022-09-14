@@ -12,6 +12,10 @@ class HomePageView(TemplateView):
         return context
 
 
+class AboutPageView(TemplateView):
+    template_name = "about.html"
+
+
 # FBV
 # from django.shortcuts import render
 # from django.http import HttpResponse

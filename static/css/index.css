@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.projects {
+  margin-top: 100px;
+}
+
+.intro p, .lists {
+  margin-top: 20px;
+}
+
+.container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lists li {
+  margin-top: 10px;
+}
+
+hr {
+  width: 80%;
+  border: 1px solid #0087ca;
+}
+
+.section-title {
+  transition: 0.1s ease-in;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.section-title:hover {
+  color: #0087ca;
+}
+
+.post-title {
+  position: relative;
+}
+
+.post-title:after {
+  background-color: #0087ca;
+  bottom: 0;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-out;
+  width: 100%;
+}
+
+.post-title:hover:after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}

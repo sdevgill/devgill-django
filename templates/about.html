@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}About Dev{% endblock title %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/about.css' %}">{% endblock css %}
+
+{% block content %}
+  <article class="post-entry">
+    <h1 class="post-title">About Dev</h1>
+    <p class="post-body">
+      Dev is easy going, curios and loves programming. He likes spending his time writing Python and learning new things. He currently lives in London. Life is good.
+    </p>
+  </article>
+{% endblock content %}

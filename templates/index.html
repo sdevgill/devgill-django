@@ -4,34 +4,29 @@
 
 {% block title %}Home{% endblock title %}
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
-{% endblock css %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/index.css' %}">{% endblock css %}
 
 {% block content %}
-<section>
-  <h1>Home</h1>
-  <p>My thoughts on space, programming and life.</p>
-</section>
+<main class="container">
 
-<section class="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li>Project</li>
-    <li>Project</li>
-    <li>Project</li>
-  </ul>
-</section>
+  <section class="projects">
+    <h2><a href="https://github.com/sdevgill" class="section-title">Projects</a></h2>
+    <ul class="lists">
+      <li><a href="" class="post-title">Project</a></li>
+      <li><a href="" class="post-title">Project</a></li>
+      <li><a href="" class="post-title">Project</a></li>
+    </ul>
+  </section>
 
-<section class="essays">
-  <h2>Essays</h2>
-  <ul>
+  <hr>
+
+  <section class="essays">
+    <h2><a href="/blog" class="section-title">Essays</a></h2>
+    <ul class="lists">
     {% for post in post_list %}
-      <li><a href="">{{ post.title }}</a></li>
+      <li><a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title }}</a></li>
     {% endfor %}
-    <li>Essay</li>
-    <li>Essay</li>
-    <li>Essay</li>
-  </ul>
-</section>
+    </ul>
+  </section>
+</main>
 {% endblock content %}
