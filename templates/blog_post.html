@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/blog_post.css' %}">{% endblock css %}
+
 {% block content %}
-<article class="post-entry">
-  <h2 class="post-title">{{ post.title }}</h2>
-  <p class="post-body">{{ post.body }}</p>
-</article>
+  <article class="post-entry">
+    <span class="date-entry">{{ post.date|date:"M j, Y" }} | 5 min red</span>
+    <h1 class="post-title">{{ post.title }}</h1>
+    <p class="post-body">{{ post.body }}</p>
+  </article>
 {% endblock content %}

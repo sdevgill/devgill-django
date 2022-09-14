@@ -4,39 +4,20 @@
 
 {% block title %}Blog{% endblock title %}
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/blog.css' %}">
-{% endblock css %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/blog.css' %}">{% endblock css %}
 
 {% block content %}
-<header class="nav-header">
-  <nav class="nav">
-    <ul class="left-nav">
-      <li><a href="/" class="nav-item logo">My Name</a></li>
-    </ul>
-    <ul class="center-nav">
-      <li><a href="#" class="nav-item">Home</a></li>
-      <li><a href="#" class="nav-item">About</a></li>
-      <li><a href="#" class="nav-item">Contact</a></li>
-    </ul>
-    <ul class="right-nav">
-      <li><a href="" class="nav-item">Login</a></li>
-      <li><a href="" class="nav-item">Subscribe</a></li>
-    </ul>
-  </nav>
-</header>
+  <section class="intro">
+    <h1>Meditations on coding, life and the universe.</h1>
+  </section>
 
-<section class="intro">
-  <h1>Thoughts on life, the universe and everything.</h1>
-</section>
-
-<main class="main">
-  {% for post in post_list %}
-  <article class="post-entry">
-    <span class="date-entry">{{ post.date|date:"M j" }}</span>
-    <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-    <span class="read-time">5 min read</span>
-  </article>
-  {% endfor %}
-</main>
+  <main class="main">
+    {% for post in post_list %}
+    <article class="post-entry">
+      <span class="date-entry">{{ post.date|date:"M j" }}</span>
+      <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+      <span class="read-time">5 min read</span>
+    </article>
+    {% endfor %}
+  </main>
 {% endblock content %}

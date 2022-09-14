@@ -1,0 +1,27 @@
+/* Blog Post */
+.post-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 120px auto;
+  max-width: 850px;
+}
+
+.date-entry {
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.post-title {
+  margin: 0 10px 45px 10px;
+  text-align: center;
+}
+
+.post-body {
+  font-weight: 300;
+  margin: 0 20px;
+  line-height: 1.5;
+}
