@@ -34,7 +34,7 @@
   {% for post in post_list %}
   <article class="post-entry">
     <span class="date-entry">{{ post.date|date:"M j" }}</span>
-    <h2 class="post-title"><a href="">{{ post.title }}</a></h2>
+    <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
     <span class="read-time">5 min read</span>
   </article>
   {% endfor %}

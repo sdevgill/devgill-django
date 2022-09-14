@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.urls import reverse
 
 
@@ -10,9 +11,15 @@ class Post(models.Model):
     )
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(null=False, unique=True)
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("post_detail", kwargs={"pk": self.pk})
+        return reverse("blog_post", kwargs={"slug": self.slug})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
