@@ -13,6 +13,13 @@
   <!-- CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% block css %}{% endblock css %}
+  <!-- Third Party CSS Bundles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
+  <!-- JS -->
+  <script type="module" src="{% static 'js/base.js' %}"></script>
+  {% block js %}{% endblock js %}
+  <!-- Third Party JS Bundles -->
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" defer></script>
 </head>
 <body>
 
@@ -36,6 +43,5 @@
 
   {% block content %}
   {% endblock content %}
-
 </body>
 </html>
