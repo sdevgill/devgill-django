@@ -16,7 +16,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   max-width: 780px;
 }
 
@@ -44,7 +44,7 @@
 .read-time {
   color: #999;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .post-title {
