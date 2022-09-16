@@ -20,7 +20,7 @@
     <div class="article-meta">
       <span class="date-entry">{{ post.date|date:"M j, Y" }}</span>
       <span class="meta-bar">|</span>
-      <span class="read-time">5 min read</span>
+      <span class="read-time">{{ post.get_read_time }} read</span>
       {% comment %} <span class="meta-bar">|</span> {% endcomment %}
       {% comment %} <span class="article-tag"></span> {% endcomment %}
     </div>

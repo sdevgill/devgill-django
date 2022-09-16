@@ -2,6 +2,8 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 
+import readtime
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
@@ -23,3 +25,7 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+
+    def get_read_time(self):
+        result = readtime.of_text(self.body)
+        return result.text
