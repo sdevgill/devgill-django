@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 120px auto;
+  margin: 120px auto 80px;
   max-width: 650px;
 }
 
@@ -16,4 +16,10 @@
   font-weight: 300;
   margin: 0 20px;
   line-height: 1.5;
+}
+
+@media screen and (max-width: 650px) {
+  .post-entry {
+    margin: 60px auto;
+  }
 }

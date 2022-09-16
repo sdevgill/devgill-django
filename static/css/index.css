@@ -25,7 +25,9 @@
 
 hr {
   width: 80%;
-  border: 1px solid #0087ca;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 135, 202, 1), rgba(0, 0, 0, 0));
 }
 
 .section-title {
@@ -58,4 +60,15 @@ hr {
 .post-title:hover:after {
   transform-origin: bottom left;
   transform: scaleX(1);
+}
+
+.essays {
+  margin-bottom: 60px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 650px) {
+  .projects {
+    margin-top: 50px;
+  }
 }
