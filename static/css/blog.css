@@ -58,11 +58,15 @@
   white-space: nowrap;
 }
 
+.post-title a:hover {
+  color: #0087ca;
+}
+
 .post-title:after {
   background-color: #0087ca;
   bottom: 0;
   content: '';
-  height: 2px;
+  height: 1px;
   left: 0;
   position: absolute;
   transform-origin: bottom right;

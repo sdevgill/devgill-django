@@ -54,7 +54,16 @@
 
 .post-body {
   margin: 0 20px;
-  line-height: 30px;
+  line-height: 32px;
+}
+
+.post-body a {
+  color: #0087ca;
+}
+
+.post-body a:hover {
+  color: #44b78b;
+  text-decoration: underline;
 }
 
 /* Post Footer */
