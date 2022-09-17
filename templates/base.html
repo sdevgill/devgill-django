@@ -35,10 +35,17 @@
         <li><a href="#" class="nav-item">Contact</a></li>
         {% comment %} Todo: Add dropdown contact menu {% endcomment %}
       </ul>
+      {% if user.is_authenticated %}
       <ul class="right-nav">
-        <li><a href="" class="nav-item">Login</a></li>
-        <li><a href="" class="nav-item">Subscribe</a></li>
+        <li>Hi, <a href="" class="nav-item">{{ user.username }}</a></li>
+        <li><a href="{% url 'logout' %}" class="nav-item">Logout</a></li>
       </ul>
+      {% else %}
+      <ul class="right-nav">
+        <li><a href="{% url 'login' %}" class="nav-item">Login</a></li>
+        <li><a href="{% url 'signup' %}" class="nav-item">Signup</a></li>
+      </ul>
+      {% endif %}
     </nav>
   </header>
 
