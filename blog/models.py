@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.urls import reverse
@@ -8,7 +9,7 @@ import readtime
 class Post(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
-        "auth.User",
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
     body = models.TextField()

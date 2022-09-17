@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # First-party apps
+    # Local apps
+    "accounts.apps.AccountsConfig",
     "home.apps.HomeConfig",
     "blog.apps.BlogConfig",
 ]
@@ -124,3 +125,6 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Account settings
+AUTH_USER_MODEL = "accounts.CustomUser"
