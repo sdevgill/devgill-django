@@ -11,16 +11,14 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{% static 'icons/favicon.ico' %}">
   <!-- CSS -->
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  {% block css %}{% endblock css %}
-  <!-- Third Party CSS Bundles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
+  {% block css %}{% endblock css %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <!-- JS -->
   <script type="module" src="{% static 'js/base.js' %}"></script>
-  {% block js %}{% endblock js %}
-  <!-- Third Party JS Bundles -->
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" defer></script>
-  <script src="https://kit.fontawesome.com/cf6539e3d7.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/cf6539e3d7.js" crossorigin="anonymous" defer></script>
+  {% block js %}{% endblock js %}
 </head>
 <body>
 

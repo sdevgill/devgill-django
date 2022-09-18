@@ -25,6 +25,21 @@ html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
+name = "crispy-bootstrap5"
+version = "0.6"
+description = "Bootstrap5 template pack for django-crispy-forms"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+django = ">=2.2"
+django-crispy-forms = ">=1.13.0"
+
+[package.extras]
+test = ["pytest", "pytest-django"]
+
+[[package]]
 name = "cssselect"
 version = "1.1.0"
 description = "cssselect parses CSS3 Selectors and translates them to XPath 1.0"
@@ -48,6 +63,14 @@ tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+
+[[package]]
+name = "django-crispy-forms"
+version = "1.14.0"
+description = "Best way to have Django DRY forms"
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "lxml"
@@ -123,7 +146,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "e7779540c3b34a4aa66f2f8f8812ce9b9cee8ab80cc13a064c84feb51cbbf3fc"
+content-hash = "ad10d057e7c87e5592101280510c5ec771a8a63d1bf051e0f373c4780598b77e"
 
 [metadata.files]
 asgiref = [
@@ -134,6 +157,10 @@ beautifulsoup4 = [
     {file = "beautifulsoup4-4.11.1-py3-none-any.whl", hash = "sha256:58d5c3d29f5a36ffeb94f02f0d786cd53014cf9b3b3951d42e0080d8a9498d30"},
     {file = "beautifulsoup4-4.11.1.tar.gz", hash = "sha256:ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"},
 ]
+crispy-bootstrap5 = [
+    {file = "crispy-bootstrap5-0.6.tar.gz", hash = "sha256:e8c50daaf266d6127c7414f5669d5f2467b640d08b045ed9dd57e351d30609ae"},
+    {file = "crispy_bootstrap5-0.6-py3-none-any.whl", hash = "sha256:ca5d2afc2a5d1cf12b8d057886a81002cdf7793afcbe0ce006c2294069c1f387"},
+]
 cssselect = [
     {file = "cssselect-1.1.0-py2.py3-none-any.whl", hash = "sha256:f612ee47b749c877ebae5bb77035d8f4202c6ad0f0fc1271b3c18ad6c4468ecf"},
     {file = "cssselect-1.1.0.tar.gz", hash = "sha256:f95f8dedd925fd8f54edb3d2dfb44c190d9d18512377d3c1e2388d16126879bc"},
@@ -141,6 +168,10 @@ cssselect = [
 Django = [
     {file = "Django-4.1.1-py3-none-any.whl", hash = "sha256:acb21fac9275f9972d81c7caf5761a89ec3ea25fe74545dd26b8a48cb3a0203e"},
     {file = "Django-4.1.1.tar.gz", hash = "sha256:a153ffd5143bf26a877bfae2f4ec736ebd8924a46600ca089ad96b54a1d4e28e"},
+]
+django-crispy-forms = [
+    {file = "django-crispy-forms-1.14.0.tar.gz", hash = "sha256:35887b8851a931374dd697207a8f56c57a9c5cb9dbf0b9fa54314da5666cea5b"},
+    {file = "django_crispy_forms-1.14.0-py3-none-any.whl", hash = "sha256:bc4d2037f6de602d39c0bc452ac3029d1f5d65e88458872cc4dbc01c3a400604"},
 ]
 lxml = [
     {file = "lxml-4.9.1-cp27-cp27m-macosx_10_15_x86_64.whl", hash = "sha256:98cafc618614d72b02185ac583c6f7796202062c41d2eeecdf07820bad3295ed"},

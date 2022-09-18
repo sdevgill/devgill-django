@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "home.apps.HomeConfig",
     "blog.apps.BlogConfig",
+    # Third party apps
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -131,3 +134,8 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 LOGIN_REDIRECT_URL = "blog"
 LOGOUT_REDIRECT_URL = "blog"
+
+# Third party settings
+# Crispy forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
