@@ -135,6 +135,9 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_REDIRECT_URL = "blog"
 LOGOUT_REDIRECT_URL = "blog"
 
+# Password reset settings
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
 # Third party settings
 # Crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
