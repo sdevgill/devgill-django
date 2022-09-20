@@ -45,7 +45,7 @@
 .date-entry,
 .read-time {
   color: #999;
-  font-size: 14px;
+  font-size: 0.95rem;
 }
 
 .post-title {
@@ -59,6 +59,15 @@
   line-height: 32px;
 }
 
+.post-body h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-body p {
+  font-size: 17px;
+}
+
 .post-body a {
   color: #0087ca;
 }
@@ -68,13 +77,37 @@
   text-decoration: underline;
 }
 
+.post-body img {
+  display: block;
+  border: 1px solid #999;
+  border-radius: 8px;
+  box-shadow: 0px 0px 30px 1px #aaa;
+  max-width: 680px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 code {
   display: inline-block;
   padding: 0 .25em;
   border: 1px solid #aaa;
   border-radius: .28rem;
   background: #fafafa;
-  color: #315082;
+  /* color: #315082; */
+  line-height: 24px;
+}
+
+/* Post Actions */
+.post-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.post-actions a:hover {
+  text-decoration: underline;
 }
 
 /* Post Footer */
@@ -125,5 +158,10 @@ code {
 
   .progress-container {
     background-color: #000;
+  }
+
+  code {
+    background: lightgrey;
+    color: #315082;
   }
 }

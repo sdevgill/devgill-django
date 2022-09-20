@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block title %}New Post{% endblock title %}
+{% block title %}Edit Post{% endblock title %}
 
 {% block css %}
   <link rel="stylesheet" href="{% static 'css/blog_actions.css' %}">
@@ -15,11 +15,11 @@
 
 {% block content %}
 <section class="post-container">
-  <h2>New Blog Post</h1>
+  <h2>Edit Blog Post</h1>
   <form action="" method="post">{% csrf_token %}
     {{ form|crispy }}
     <div class="button">
-      <button class="btn btn-success ml-2" type="submit">Save</button>
+      <button class="btn btn-info ml-2" type="submit">Update</button>
     </div>
   </form>
 </section>
