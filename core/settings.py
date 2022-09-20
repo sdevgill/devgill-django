@@ -135,8 +135,16 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_REDIRECT_URL = "blog"
 LOGOUT_REDIRECT_URL = "blog"
 
-# Password reset settings
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# Email backend
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+DEFAULT_FROM_EMAIL = "no-reply@neutronweb.com"
+EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_HOST_USER = "apikey"
+EMAIL_HOST_PASSWORD = (
+    "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"
+)
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Third party settings
 # Crispy forms
