@@ -1,0 +1,14 @@
+.post-container {
+  width: 620px;
+  max-width: 80%;
+  margin: 80px auto;
+}
+
+h2 {
+  margin-bottom: 40px;
+}
+
+h2,
+.button {
+  text-align: center;
+}

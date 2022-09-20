@@ -30,3 +30,6 @@ class Post(models.Model):
     def get_read_time(self):
         result = readtime.of_text(self.body)
         return result.text
+
+    class Meta:
+        ordering = ["-date"]

@@ -66,6 +66,10 @@ a {
   font-weight: 600;
 }
 
+#username {
+  color: #0087ca;
+}
+
 footer {
   display: flex;
   flex-direction: column;

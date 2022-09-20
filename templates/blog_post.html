@@ -18,6 +18,8 @@
 
   <article class="post-entry">
     <div class="article-meta">
+      <span class="author-entry">{{ post.author }}</span>
+      <span class="meta-bar">|</span>
       <span class="date-entry">{{ post.date|date:"M j, Y" }}</span>
       <span class="meta-bar">|</span>
       <span class="read-time">{{ post.get_read_time }} read</span>

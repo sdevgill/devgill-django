@@ -12,6 +12,22 @@
   font-weight: 400;
 }
 
+/* Add new */
+.new-post {
+  display: flex;
+  justify-content: center;
+  margin: 40px 20px;
+}
+
+.new-post a {
+  color: #0087ca;
+}
+
+.new-post a:hover {
+  text-decoration: underline;
+  color: #44b78b;
+}
+
 /* Blog Posts */
 .main {
   display: flex;

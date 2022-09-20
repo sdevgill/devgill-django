@@ -11,6 +11,12 @@
     <h1>Meditations on coding, life and the universe.</h1>
   </section>
 
+  {% if user.is_authenticated %}
+  <section class="new-post">
+    <a href="{% url 'blog_new' %}">Add a new post</a>
+  </section>
+  {% endif %}
+
   <main class="main">
     {% for post in post_list %}
     <article class="post-entry">

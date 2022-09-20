@@ -41,7 +41,9 @@
   color: #999;
 }
 
-.date-entry, .read-time {
+.author-entry,
+.date-entry,
+.read-time {
   color: #999;
   font-size: 14px;
 }
@@ -88,6 +90,11 @@
 
 .post-footer h2 {
   margin: 60px 20px 40px;
+  font-size: 24px;
+}
+
+.post-footer h3 {
+  font-size: 20px;
 }
 
 /* Media Queries */
