@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="{% static 'css/blog_crud.css' %}">
 {% endblock css %}
 
+{% block js %}
+  {{ form.media }}
+{% endblock js %}
+
 {% block content %}
 <section class="post-container">
   <h2>New Blog Post</h1>

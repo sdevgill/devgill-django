@@ -4,6 +4,7 @@ from django.template.defaultfilters import slugify
 from django.urls import reverse
 
 import readtime
+from tinymce.models import HTMLField
 
 
 class Post(models.Model):
@@ -12,7 +13,8 @@ class Post(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    body = models.TextField()
+    # body = models.TextField()
+    body = HTMLField()
     date = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(null=False, unique=True)
 

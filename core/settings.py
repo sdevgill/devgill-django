@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Third party apps
     "crispy_forms",
     "crispy_bootstrap5",
+    "tinymce",
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,54 @@ EMAIL_USE_TLS = True
 # Crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# TinyMCE
+TINYMCE_JS_URL = "tinymce/tinymce.min.js"
+TINYMCE_JS_ROOT = "static/tinymce"
+TINYMCE_DEFAULT_CONFIG = {
+    "height": 500,
+    # # "width": 750,
+    "cleanup_on_startup": True,
+    "custom_undo_redo_levels": 20,
+    "selector": "textarea",
+    "theme": "silver",
+    "plugins": """
+            emoticons hr link image media preview codesample contextmenu
+            code lists charmap fullscreen insertdatetime wordcount
+            autolink anchor spellchecker
+            """,
+    "contextmenu": "formats | link | image",
+    "menubar": True,
+    "statusbar": True,
+    "mobile": {
+        "menubar": True,
+        "height": 300,
+    },
+    "toolbar": "undo redo formatgroup paragraphgroup insertgroup code codesample",
+    "toolbar_groups": {
+        "formatgroup": {
+            "icon": "format",
+            "tooltip": "Formatting",
+            "items": "bold italic underline strikethrough | forecolor backcolor | superscript subscript | removeformat",
+        },
+        "paragraphgroup": {
+            "icon": "paragraph",
+            "tooltip": "Paragraph format",
+            "items": "h1 h2 h3 | bullist numlist | alignleft aligncenter alignright | indent outdent",
+        },
+        "insertgroup": {
+            "icon": "plus",
+            "tooltip": "Insert",
+            "items": "link image emoticons charmap hr",
+        },
+    },
+    # "toolbar1": """
+    #         undo redo | styleselect fontselect fontsizeselect|
+    #         fullscreen preview bold italic | forecolor | code codesample |
+    #         bullist numlist table | link image media |
+    #         """,
+    # "toolbar2": """
+    #         """,
+}
+TINYMCE_SPELLCHECKER = True
+# TINYMCE_COMPRESSOR = True

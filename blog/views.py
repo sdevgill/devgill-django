@@ -20,7 +20,11 @@ class BlogDetailView(DetailView):
 class BlogCreateView(CreateView):
     model = Post
     template_name = "blog_new.html"
-    fields = ("title", "body")
+    fields = (
+        "title",
+        "body",
+        "slug",
+    )
 
     def form_valid(self, form):
         form.instance.author = self.request.user
