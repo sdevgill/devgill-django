@@ -14,3 +14,21 @@ const scrollBar = () => {
 document.body.addEventListener('htmx:configRequest', (event) => {
   event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
 });
+
+// Delete Confirmation Toggle
+const toggleDelete = () => {
+  let deleteButton = document.getElementById('delete-button');
+  let deleteConfirm = document.querySelector('.delete-confirm');
+
+  deleteButton.addEventListener('click', () => {
+    if (deleteConfirm.style.display === 'none') {
+      deleteConfirm.style.display = 'flex';
+    } else {
+      deleteConfirm.style.display = 'none';
+    }
+  });
+};
+
+window.onload = () => {
+  toggleDelete();
+};

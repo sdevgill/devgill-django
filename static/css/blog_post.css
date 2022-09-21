@@ -110,6 +110,19 @@ code {
   text-decoration: underline;
 }
 
+.delete-confirm {
+  /* display: none; */
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  width: 400px;
+  max-width: 80%;
+}
+
+.delete-button {
+  text-align: center;
+}
+
 /* Post Footer */
 .post-footer {
   display: flex;
