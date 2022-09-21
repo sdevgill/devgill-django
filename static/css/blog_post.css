@@ -102,8 +102,11 @@ code {
 .post-actions {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+}
+
+.post-actions a {
+  margin: 0 20px;
 }
 
 .post-actions a:hover {

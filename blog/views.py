@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.views.generic import (
     ListView,
     DetailView,
@@ -23,7 +25,7 @@ class BlogDetailView(DetailView):
     template_name = "blog_post.html"
 
 
-class BlogCreateView(CreateView):
+class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = (
         "title",
@@ -37,7 +39,7 @@ class BlogCreateView(CreateView):
         return super().form_valid(form)
 
 
-class BlogUpdateView(UpdateView):
+class BlogUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     fields = (
         "title",
@@ -56,6 +58,7 @@ class HTTPResponseHXRedirect(HttpResponseRedirect):
 
 
 # FBV for HTMX redirect
+@login_required
 def blog_delete(request, slug):
     post = Post.objects.get(slug=slug)
     if request.method == "POST":
