@@ -6,7 +6,10 @@
 
 {% block css %}<link rel="stylesheet" href="{% static 'css/blog_post.css' %}">{% endblock css %}
 
-{% block js %}<script type="module" src="{% static 'js/blog_post.js' %}"></script>{% endblock js %}
+{% block js %}
+  <script type="module" src="{% static 'js/blog_post.js' %}"></script>
+  <script src="https://unpkg.com/htmx.org@1.8.0"></script>
+{% endblock js %}
 
 {% block content %}
   <div class="sticky-header">
@@ -32,8 +35,21 @@
 
   {% if user.is_authenticated %}
   <section class="post-actions">
-    <a href=" {% url 'blog_edit' post.slug %}" class="link-warning">Edit</a>
-    <a href=" {% url 'blog_delete' post.slug %}" class="link-danger">Delete</a>
+    <a href="{% url 'blog_new' %}" class="link-success">+ Add</a>
+    <a href="{% url 'blog_edit' post.slug %}" class="link-warning">Edit</a>
+    {% comment %} <a href="{% url 'blog_delete' post.slug %}" class="link-danger">Delete</a> {% endcomment %}
+    <form method="post">
+      {% csrf_token %}
+      <a
+      class="link-danger"
+      href="javascript:void(0)"
+      hx-post="{% url 'blog_delete' post.slug %}"
+      hx-confirm="Are you sure you want to delete this post?"
+      hx-target="body"
+      hx-swap="none">
+      Delete
+    </a>
+    </form>
     <a href="{% url 'blog' %}" class="link-info">All Posts</a>
   </section>
   {% endif %}

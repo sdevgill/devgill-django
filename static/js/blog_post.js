@@ -10,4 +10,7 @@ const scrollBar = () => {
   document.getElementById("myBar").style.width = scrolled + "%";
 };
 
-// Delete a post
+// HTMX CSRF Token
+document.body.addEventListener('htmx:configRequest', (event) => {
+  event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+});

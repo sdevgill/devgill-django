@@ -157,17 +157,15 @@ TINYMCE_JS_URL = "tinymce/tinymce.min.js"
 TINYMCE_JS_ROOT = "static/tinymce"
 TINYMCE_DEFAULT_CONFIG = {
     "height": 500,
-    # # "width": 750,
     "cleanup_on_startup": True,
     "custom_undo_redo_levels": 20,
     "selector": "textarea",
     "theme": "silver",
     "plugins": """
-            emoticons hr link image media preview codesample contextmenu
-            code lists charmap fullscreen insertdatetime wordcount
-            autolink anchor spellchecker
+            emoticons hr link image media preview codesample
+            code lists fullscreen wordcount
+            autolink anchor
             """,
-    "contextmenu": "formats | link | image",
     "menubar": True,
     "statusbar": True,
     "mobile": {
@@ -189,16 +187,8 @@ TINYMCE_DEFAULT_CONFIG = {
         "insertgroup": {
             "icon": "plus",
             "tooltip": "Insert",
-            "items": "link image emoticons charmap hr",
+            "items": "link image emoticons hr",
         },
     },
-    # "toolbar1": """
-    #         undo redo | styleselect fontselect fontsizeselect|
-    #         fullscreen preview bold italic | forecolor | code codesample |
-    #         bullist numlist table | link image media |
-    #         """,
-    # "toolbar2": """
-    #         """,
 }
-TINYMCE_SPELLCHECKER = True
 # TINYMCE_COMPRESSOR = True

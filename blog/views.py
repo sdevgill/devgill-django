@@ -6,10 +6,11 @@ from django.views.generic import (
 from django.views.generic.edit import (
     CreateView,
     UpdateView,
-    DeleteView,
+    # DeleteView,
 )
 from django.urls import reverse_lazy
 from .models import Post
+from django.http import HttpResponseRedirect
 
 
 class BlogListView(ListView):
@@ -46,7 +47,23 @@ class BlogUpdateView(UpdateView):
     template_name = "blog_edit.html"
 
 
-class BlogDeleteView(DeleteView):
-    model = Post
-    template_name = "blog_delete.html"
-    success_url = reverse_lazy("blog")
+class HTTPResponseHXRedirect(HttpResponseRedirect):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self["HX-Redirect"] = self["Location"]
+
+    status_code = 200
+
+
+# FBV for HTMX redirect
+def blog_delete(request, slug):
+    post = Post.objects.get(slug=slug)
+    if request.method == "POST":
+        post.delete()
+    return HTTPResponseHXRedirect(reverse_lazy("blog"))
+
+
+# class BlogDeleteView(DeleteView):
+#     model = Post
+#     template_name = "blog_delete.html"
+#     success_url = reverse_lazy("blog")
