@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.generic import (
     ListView,
     DetailView,
@@ -39,7 +39,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class BlogUpdateView(LoginRequiredMixin, UpdateView):
+class BlogUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = (
         "title",
@@ -47,6 +47,10 @@ class BlogUpdateView(LoginRequiredMixin, UpdateView):
         "slug",
     )
     template_name = "blog_edit.html"
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user or self.request.user.is_superuser
 
 
 class HTTPResponseHXRedirect(HttpResponseRedirect):
@@ -59,6 +63,7 @@ class HTTPResponseHXRedirect(HttpResponseRedirect):
 
 # FBV for HTMX redirect
 @login_required
+@user_passes_test(lambda user: user.is_superuser or Post.author)
 def blog_delete(request, slug):
     post = Post.objects.get(slug=slug)
     if request.method == "POST":

@@ -36,11 +36,13 @@
   {% if user.is_authenticated %}
   <section class="post-actions">
     <a href="{% url 'blog_new' %}" class="link-success">+ Add</a>
+    {% if user.is_superuser or user == post.author %}
     <a href="{% url 'blog_edit' post.slug %}" class="link-warning">Edit</a>
     {% comment %} <a href="{% url 'blog_delete' post.slug %}" class="link-danger">Delete</a> {% endcomment %}
     <form method="post">
       <a id="delete-button" class="link-danger" href="javascript:void(0)">Delete</a>
     </form>
+    {% endif %}
     <a href="{% url 'blog' %}" class="link-info">All Posts</a>
   </section>
 
