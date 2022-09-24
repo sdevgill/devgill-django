@@ -77,9 +77,17 @@ footer {
   margin-bottom: 120px;
 }
 
-.fa-twitter {
-  color: #1da1f2;
+.socials a {
+  margin: 0 10px;
 }
+
+.socials a:hover {
+  color: #0087ca;
+}
+
+/* .fa-twitter {
+  color: #1da1f2;
+} */
 
 /* Media Queries */
 @media screen and (max-width: 650px) {

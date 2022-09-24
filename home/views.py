@@ -16,6 +16,10 @@ class AboutPageView(TemplateView):
     template_name = "about.html"
 
 
+class ContactPageView(TemplateView):
+    template_name = "contact.html"
+
+
 # FBV
 # from django.shortcuts import render
 # from django.http import HttpResponse
